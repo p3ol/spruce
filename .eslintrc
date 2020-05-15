@@ -1,0 +1,6 @@
+{
+  "extends": ["@poool/eslint-config"],
+  "rules": {
+    "template-curly-spacing": 0
+  }
+}
