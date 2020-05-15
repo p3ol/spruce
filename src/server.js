@@ -10,49 +10,50 @@ import { renderToString } from 'react-dom/server';
 process.env.IS_SSR = true;
 const port = process.env.PORT || 5000;
 
-export default async ({
-  services: [],
-} = {}) => {
+(async () => {
+  const configPath = path.resolve('spruce.config.js');
+  const spruceConfig = (await import(
+    /* webpackMode: "eager" */
+    configPath
+  )).default;
+
   const app = fastify({ logger: true });
   app.register(compression);
+
   app.register(pointOfView, {
     engine: { ejs },
     root: path.resolve('./dist/views'),
   });
+
   app.register(serveStatic, {
     serve: false,
     root: path.resolve('./dist/public'),
   });
 
-  for (const service of services) {
+  for (const service of spruceConfig.services) {
+    service.name = service.name || 'default';
+
     try {
-      const serviceConfig = (await import(/* webpackMode: "eager" */
-        `../services/${service}/app.config.js`)).default;
+      const serviceConfig = (await import(
+        /* webpackMode: "eager" */
+        path.resolve(service.server.entry)
+      )).default;
 
       for (const route of serviceConfig.routes) {
-        const App = route.handler || React.Fragment;
-        const Metas = route.metasHandler;
-        const stats = (await import(/* webpackMode: "eager" */
-          `../dist/${service}.json`)).default;
+        const App = route.content || React.Fragment;
+        const Metas = route.metas;
 
         app.get(route.path, (req, reply) => {
           if (/\./.test(req.raw.url)) {
             return reply.sendFile(req.raw.url);
           }
 
-          process.env.NAVIGATOR_LANGUAGE = req.headers['accept-language'];
-          process.env.LOCATION_URL = req.url;
-          process.env.LOCATION_HREF = req.originalUrl;
-          process.env.LOCATION_PATHNAME = route.path;
-
           try {
             const content = renderToString(<App />);
 
-            return reply.view(`/${service}/index.ejs`, {
+            return reply.view(`/${service.name}/index.ejs`, {
               content,
               head: Metas?.renderStatic?.(),
-              jsBundle: stats?.js,
-              stylesBundle: stats?.css,
             });
           } catch (e) {
             console.error(e);
@@ -66,4 +67,4 @@ export default async ({
   }
 
   app.listen(port);
-};
+})();
