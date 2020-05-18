@@ -4,9 +4,13 @@ const fs = require('fs-extra');
 const path = require('path');
 const chalk = require('chalk');
 const help = require('command-line-usage');
-const argv = require('yargs').argv;
+const yargs = require('yargs');
 const build = require('./build');
+const install = require('./install');
 const pkg = require('../../package.json');
+
+const argv = yargs
+  .boolean(['version', 'v', 'help', 'h', 'npm', 'n']).argv;
 
 const usage = [{
   header: chalk.green.bold('spruce'),
@@ -19,6 +23,8 @@ const usage = [{
 }, {
   header: 'Commands',
   content: [
+    chalk.underline('install') + ' -> Install the needed peer dependencies ' +
+      'to run your server after build',
     chalk.underline('build') + ' -> Build your SSR server for production use',
     chalk.underline('serve') + ' -> Run your SSR server for dev purposes',
   ],
@@ -39,6 +45,11 @@ const usage = [{
     alias: 's',
     type: String,
     description: 'Only build/serve some services',
+  }, {
+    name: 'npm',
+    alias: 'n',
+    type: Boolean,
+    description: 'Install dependencies using npm instead of yarn',
   }],
 }];
 
@@ -61,7 +72,11 @@ if (argv.help || argv.h || !argv._[0]) {
   }
 
   switch (argv._[0]) {
+    case 'install':
+      await install(userConfig, argv);
+      break;
     case 'build':
-      await build(userConfig);
+      await build(userConfig, argv);
+      break;
   }
 })();

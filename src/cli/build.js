@@ -1,5 +1,6 @@
 const path = require('path');
 const chalk = require('chalk');
+const fs = require('fs-extra');
 const { webpack, debug } = require('./utils');
 const webpackConfig = require('./webpack.config');
 
@@ -16,11 +17,17 @@ module.exports = async (spruceConfig = {}) => {
     process.exit(1);
   }
 
+  const outputDir = path.resolve(spruceConfig.outputDir || './dist');
+  if (await fs.exists(outputDir)) {
+    debug(spruceConfig, 'Cleaning existing output dir...');
+    await fs.remove(outputDir);
+  }
+
   for (const service of spruceConfig.services) {
     service.name = service.name || 'default';
 
     if (service.server && service.bundle) {
-      debug(spruceConfig, chalk.green(`Building service ${service.name}...`));
+      debug(spruceConfig, `Building service ${service.name}...\n`);
 
       try {
         const serviceWebpackConfig = webpackConfig({ service, spruceConfig });
@@ -31,7 +38,7 @@ module.exports = async (spruceConfig = {}) => {
     }
   }
 
-  debug(spruceConfig, chalk.green('Building SSR enabled server...'));
+  debug(spruceConfig, 'Building SSR enabled server...\n');
 
   const serverWebpackConfig = webpackConfig({
     service: { name: '_spruceCoreServer' },

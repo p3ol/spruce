@@ -1,7 +1,8 @@
-const webpackSync = require('webpack');
+const webpackAsync = require('webpack');
+const spawnAsync = require('cross-spawn');
 
 const webpack = (...args) => new Promise((resolve, reject) => {
-  webpackSync(...args, (err, stats) => {
+  webpackAsync(...args, (err, stats) => {
     if (err) {
       reject(err);
     } else if (stats.hasErrors()) {
@@ -12,12 +13,25 @@ const webpack = (...args) => new Promise((resolve, reject) => {
   });
 });
 
+const spawn = (...args) =>
+  new Promise((resolve, reject) => {
+    let result = '';
+    let error = '';
+    const req = spawnAsync(...args);
+    req.stdout && req.stdout.on('data', data => { result += data; });
+    req.stderr && req.stderr.on('data', data => { error += data; });
+    req.on('close', code => code !== 0 ? reject(error, code) : resolve(result));
+    req.on('error', err => reject(err));
+  });
+
 const debug = (spruceConfig = {}, ...args) => {
-  spruceConfig.debug !== false && console.log(...args);
+  spruceConfig.debug !== false && console.log('🌲', ...args);
 };
 
 module.exports = {
-  webpackSync,
+  webpackAsync,
   webpack,
+  spawnAsync,
+  spawn,
   debug,
 };
