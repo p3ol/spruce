@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "lerna": "./node_modules/.bin/lerna",
+    "publish-local": "yarn lerna publish --registry http://localhost:4873",
     "unlink-all": "./node_modules/.bin/lerna exec --parallel -- yarn unlink",
     "link-all": "./node_modules/.bin/lerna exec --parallel -- yarn link",
     "build": "./node_modules/.bin/lerna exec --parallel -- rollup -c=../../rollup.config.js",
@@ -41,5 +42,8 @@
   "engines": {
     "node": ">=10.18.0",
     "yarn": ">=1.22.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
