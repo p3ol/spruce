@@ -12,15 +12,11 @@ const OUTPUT_DIR = path.join(PACKAGE_ROOT_PATH, 'dist');
 const FORMATS = ['cjs', 'esm'];
 
 const defaultPlugins = [
+  externals(),
   babel({
     exclude: 'node_modules/**',
     runtimeHelpers: true,
     configFile: path.join(LERNA_ROOT_PATH, 'babel.config.js'),
-  }),
-  externals({
-    deps: false,
-    peerDeps: true,
-    devDeps: true,
   }),
   resolve(),
   commonjs(),

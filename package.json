@@ -1,7 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "bootstrap": "./node_modules/.bin/lerna bootstrap",
+    "lerna": "./node_modules/.bin/lerna",
+    "unlink-all": "./node_modules/.bin/lerna exec --parallel -- yarn unlink",
+    "link-all": "./node_modules/.bin/lerna exec --parallel -- yarn link",
     "build": "./node_modules/.bin/lerna exec --parallel -- rollup -c=../../rollup.config.js",
     "lint": "./node_modules/.bin/eslint ."
   },
@@ -29,9 +31,12 @@
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-eslint": "7.0.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
     "rollup-plugin-node-externals": "2.1.6",
+    "rollup-plugin-node-globals": "^1.4.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-terser": "5.3.0"
+    "rollup-plugin-terser": "5.3.0",
+    "verdaccio": "^4.6.2"
   },
   "engines": {
     "node": ">=10.18.0",

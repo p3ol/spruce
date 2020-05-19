@@ -1,7 +1,14 @@
 {
   "name": "@poool/spruce-webpack-config",
   "description": "🌲 A React SSR toolbelt for your everyday life",
-  "main": "lib/index.js",
+  "main": "dist/lib.cjs.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/p3ol/spruce.git",
+    "directory": "packages/spruce-webpack-config"
+  },
+  "author": "Ugo Stephant <ugo@poool.fr>",
+  "license": "MIT",
   "version": "1.0.0",
   "peerDependencies": {
     "@babel/core": "^7.9.6",

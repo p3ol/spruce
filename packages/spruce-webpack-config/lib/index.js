@@ -26,6 +26,7 @@ module.exports = ({
   const baseConfig = {
     entry,
     target: 'web',
+    context: path.resolve(),
     mode: isDevelopment ? 'development' : 'production',
     devtool: isDevelopment ? 'source-map' : false,
     parallelism: 4,

@@ -1,12 +1,16 @@
 {
   "name": "@poool/spruce",
   "description": "🌲 A React SSR toolbelt for your everyday life",
-  "main": "dist/spruce.cjs.js",
+  "main": "dist/lib.cjs.js",
   "sideEffects": false,
-  "jsnext:main": "dist/spruce.esm.js",
-  "module": "dist/spruce.esm.js",
-  "esnext": "dist/spruce.esm.js",
-  "repository": "https://github.com/p3ol/spruce.git",
+  "jsnext:main": "dist/lib.esm.js",
+  "module": "dist/lib.esm.js",
+  "esnext": "dist/lib.esm.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/p3ol/spruce.git",
+    "directory": "packages/spruce"
+  },
   "author": "Ugo Stephant <ugo@poool.fr>",
   "license": "MIT",
   "version": "1.0.0",
