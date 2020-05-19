@@ -9,7 +9,7 @@
   },
   "author": "Ugo Stephant <ugo@poool.fr>",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "0.0.1-alpha.1",
   "peerDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
