@@ -6,10 +6,9 @@ import compress from 'fastify-compress';
 import serveStatic from 'fastify-static';
 import pointOfView from 'point-of-view';
 import { renderToString } from 'react-dom/server';
+import { Metas } from './metas';
 
-process.env.IS_SSR = true;
-
-export const create = async ({
+export default async ({
   logger = true,
   compression = true,
   services = [],
@@ -35,28 +34,30 @@ export const create = async ({
     try {
       for (const route of service.routes) {
         const App = route.content || React.Fragment;
-        const Metas = route.metas;
+        const paths = [].concat(route.path);
 
-        app.get(route.path, (req, reply) => {
-          if (/\./.test(req.raw.url)) {
-            return reply.sendFile(req.raw.url);
-          }
+        for (const path of paths) {
+          app.get(path, (req, reply) => {
+            if (/\./.test(req.raw.url)) {
+              return reply.sendFile(req.raw.url);
+            }
 
-          try {
-            const content = renderToString(<App />) || '';
+            try {
+              const content = renderToString(<App />) || '';
 
-            return reply.view(route.view, {
-              spruce: {
-                content,
-                js: route.jsBundle,
-                metas: Metas?.renderStatic?.() || {},
-              },
-            });
-          } catch (e) {
-            console.error(e);
-            return reply.code(500).send('');
-          }
-        });
+              return reply.view(route.view, {
+                spruce: {
+                  title: route.title,
+                  content,
+                  metas: Metas.renderStatic(route.metas) || {},
+                },
+              });
+            } catch (e) {
+              console.error(e);
+              return reply.code(500).send('');
+            }
+          });
+        }
       }
     } catch (e) {
       console.error(e);
