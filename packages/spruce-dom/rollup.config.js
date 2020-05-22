@@ -5,27 +5,30 @@ import commonjs from 'rollup-plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
 import externals from 'rollup-plugin-node-externals';
 
-const { LERNA_PACKAGE_NAME, LERNA_ROOT_PATH } = process.env;
-const PACKAGE_ROOT_PATH = process.cwd();
-const INPUT_FILE = path.join(PACKAGE_ROOT_PATH, 'lib/index.js');
-const OUTPUT_DIR = path.join(PACKAGE_ROOT_PATH, 'dist');
-const FORMATS = ['cjs', 'esm'];
+const INPUT_FILE = './lib/index.js';
+const OUTPUT_DIR = './dist';
+const FORMATS = ['umd', 'cjs', 'esm'];
 
 const defaultPlugins = [
   externals(),
   babel({
-    exclude: 'node_modules/**',
+    exclude: /node_modules/,
     runtimeHelpers: true,
-    configFile: path.join(LERNA_ROOT_PATH, 'babel.config.js'),
   }),
-  resolve(),
+  resolve({ preferBuiltins: true }),
   commonjs(),
   terser(),
 ];
 
-const defaultExternals = [];
+const defaultExternals = [
+  'react',
+  'react-dom',
+];
 
-const defaultGlobals = {};
+const defaultGlobals = {
+  react: 'React',
+  'react-dom': 'ReactDOM',
+};
 
 export default FORMATS.map(f => ({
   input: INPUT_FILE,
@@ -34,7 +37,7 @@ export default FORMATS.map(f => ({
   ],
   external: defaultExternals,
   output: {
-    name: LERNA_PACKAGE_NAME,
+    name: 'spruce-dom',
     file: path.join(OUTPUT_DIR, `lib.${f}.js`),
     format: f,
     sourcemap: true,

@@ -7,6 +7,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const { StatsWriterPlugin } = require('webpack-stats-plugin');
 
 module.exports = ({
+  formats = ['umd', 'commonjs2'],
   entry = './src/index.js',
   outputDir = './dist',
   publicDir = './public',
@@ -78,6 +79,8 @@ module.exports = ({
     output: {
       publicPath: './',
       path: path.resolve(path.join(outputDir, publicDir)),
+      libraryTarget: 'umd2',
+      globalObject: 'this',
       filename: '[name].[hash].js',
     },
     devServer: devServer ? {

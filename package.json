@@ -2,10 +2,12 @@
   "private": true,
   "scripts": {
     "lerna": "./node_modules/.bin/lerna",
-    "publish-local": "yarn lerna publish --registry http://localhost:4873",
+    "publish-local": "yarn lerna publish",
     "unlink-all": "./node_modules/.bin/lerna exec --parallel -- yarn unlink",
     "link-all": "./node_modules/.bin/lerna exec --parallel -- yarn link",
-    "build": "./node_modules/.bin/lerna exec --parallel -- rollup -c=../../rollup.config.js",
+    "clean-all": "./node_modules/.bin/lerna exec --parallel -- yarn clean",
+    "build-all": "./node_modules/.bin/lerna exec --parallel -- yarn build",
+    "build": "yarn clean-all && yarn build-all",
     "lint": "./node_modules/.bin/eslint ."
   },
   "workspaces": [

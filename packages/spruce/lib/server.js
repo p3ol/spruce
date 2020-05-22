@@ -6,7 +6,6 @@ import compress from 'fastify-compress';
 import serveStatic from 'fastify-static';
 import pointOfView from 'point-of-view';
 import { renderToString } from 'react-dom/server';
-import { Metas } from './metas';
 
 export default async ({
   logger = true,
@@ -44,12 +43,15 @@ export default async ({
 
             try {
               const content = renderToString(<App />) || '';
+              const { title = '', metas = '' } =
+                typeof route.metas === 'function'
+                  ? route.metas() : route.metas;
 
               return reply.view(route.view, {
                 spruce: {
-                  title: route.title,
+                  title,
                   content,
-                  metas: Metas.renderStatic(route.metas) || {},
+                  metas,
                 },
               });
             } catch (e) {

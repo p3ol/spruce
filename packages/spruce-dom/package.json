@@ -1,5 +1,5 @@
 {
-  "name": "@poool/spruce-webpack-config",
+  "name": "@poool/spruce-dom",
   "description": "🌲 A React SSR toolbelt for your everyday life",
   "main": "dist/lib.cjs.js",
   "sideEffects": false,
@@ -9,27 +9,20 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/p3ol/spruce.git",
-    "directory": "packages/spruce-webpack-config"
+    "directory": "packages/spruce-dom"
   },
   "author": "Ugo Stephant <ugo@poool.fr>",
   "license": "MIT",
   "version": "0.0.1-alpha.0",
   "peerDependencies": {
-    "@babel/core": "^7.9.6",
-    "@babel/preset-env": "^7.9.6",
-    "@babel/preset-react": "^7.9.4"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "dependencies": {
-    "babel-loader": "8.1.0",
-    "copy-webpack-plugin": "6.0.1",
-    "file-loader": "6.0.0",
-    "friendly-errors-webpack-plugin": "1.7.0",
-    "html-webpack-plugin": "4.3.0",
-    "raw-loader": "4.0.1",
-    "terser-webpack-plugin": "3.0.1",
-    "webpack": "4.43.0",
-    "webpack-node-externals": "1.7.2",
-    "webpack-stats-plugin": "0.3.1"
+    "@babel/runtime-corejs3": "7.9.6",
+    "core-js": "3.6.5",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
   },
   "scripts": {
     "clean": "rm -rf ./dist || true",

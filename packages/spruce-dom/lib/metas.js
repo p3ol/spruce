@@ -1,10 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+const renderStatic = function () {
+  return {
+    title: this.title,
+    metas: '' +
+      Object
+        .entries(this.metaName || {})
+        .map(([_, { name, content }]) =>
+          `<meta name="${name}" content="${content}" />`
+        ).join('') +
+      Object
+        .entries(this.metaProperty || {})
+        .map(([_, { property, content }]) =>
+          `<meta property"${property}" content="${content}" />`
+        ).join(''),
+  };
+};
+
 const createStore = () => ({
   title: null,
   metaProperty: {},
   metaName: {},
+  renderStatic,
 });
 
 const defaultStore = createStore();
@@ -65,19 +83,6 @@ const Metas = ({
         return null;
     }
   });
-};
-
-Metas.renderStatic = (store = defaultStore) => {
-  return {
-    title: store.title,
-    meta: '' +
-      Object.entries(store.metaName).map(([_, { name, content }]) =>
-        `<meta name="${name}" content="${content}" />`
-      ).join('') +
-      Object.entries(store.metaProperty).map(([_, { property, content }]) =>
-        `<meta property"${property}" content="${content}" />`
-      ).join(''),
-  };
 };
 
 export { Metas, createStore };
