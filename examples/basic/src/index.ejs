@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base href="/" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+
+    <title><%= typeof spruce !== 'undefined' ? spruce.title : '' %></title>
+    <%- typeof spruce !== 'undefined' ? spruce.metas : '' %>
+  </head>
+  <body>
+    <div id="app"><%- typeof spruce !== 'undefined' ? spruce.content : '' %></div>
+  </body>
+</html>
