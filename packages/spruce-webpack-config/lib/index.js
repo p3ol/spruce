@@ -91,10 +91,10 @@ module.exports = ({
       historyApiFallback: true,
       hot: true,
       open: true,
-      https: devServer.https === true ? {
+      https: devServer.https ? {
         key: fs.readFileSync(path.resolve(privateKeyPath)),
         cert: fs.readFileSync(path.resolve(certificatePath)),
-      } : null,
+      } : undefined,
     } : undefined,
   };
 
