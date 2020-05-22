@@ -4,6 +4,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
 import externals from 'rollup-plugin-node-externals';
+
 const INPUT_FILE = './lib/index.js';
 const OUTPUT_DIR = './dist';
 const FORMATS = ['cjs', 'esm'];
