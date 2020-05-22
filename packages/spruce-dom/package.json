@@ -27,5 +27,9 @@
   "scripts": {
     "clean": "rm -rf ./dist || true",
     "build": "rollup -c"
+  },
+  "gitHead": "8282723ae10434f132e294eb23c9fe7f4b642c92",
+  "publishConfig": {
+    "access": "public"
   }
 }
