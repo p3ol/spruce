@@ -13,7 +13,7 @@
   },
   "author": "Ugo Stephant <ugo@poool.fr>",
   "license": "MIT",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1-alpha.2",
   "peerDependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
