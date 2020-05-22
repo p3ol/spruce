@@ -13,7 +13,7 @@
   },
   "author": "Ugo Stephant <ugo@poool.fr>",
   "license": "MIT",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1-alpha.1",
   "peerDependencies": {
     "ejs": "^3.1.2",
     "fastify": "^2.14.1",
