@@ -6,14 +6,14 @@ const renderStatic = function () {
     title: this.title,
     metas: '' +
       Object
-        .entries(this.metaName || {})
+        .entries(this.metaName || /* istanbul ignore next: just in case */ {})
         .map(([_, { name, content }]) =>
           `<meta name="${name}" content="${content}" />`
         ).join('') +
       Object
-        .entries(this.metaProperty || {})
+        .entries(this.metaProperty || /* istanbul ignore next: same */ {})
         .map(([_, { property, content }]) =>
-          `<meta property"${property}" content="${content}" />`
+          `<meta property="${property}" content="${content}" />`
         ).join(''),
   };
 };
@@ -37,6 +37,7 @@ const Metas = ({
     const title = translate(child.props.children);
     store.title = title;
 
+    /* istanbul ignore else: document is always available in jsdom */
     if (typeof document !== 'undefined') {
       document.title = title;
     }
@@ -54,19 +55,20 @@ const Metas = ({
       store.metaName[child.props.name] = { ...child.props, content };
     }
 
-    if (typeof document === 'undefined') {
-      return null;
-    }
+    /* istanbul ignore else: document is always available in jsdom */
+    if (typeof document !== 'undefined') {
+      const tag = document.querySelector(selector);
 
-    const tag = document.querySelector(selector);
+      if (!tag) {
+        return ReactDOM.createPortal(
+          React.cloneElement(child, { content }), document.head
+        );
+      } else {
+        tag.setAttribute('content', content);
 
-    if (!tag) {
-      return ReactDOM.createPortal(
-        React.cloneElement(child, { content }), document.head
-      );
+        return null;
+      }
     } else {
-      tag.setAttribute('content', content);
-
       return null;
     }
   };
