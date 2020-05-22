@@ -8,13 +8,13 @@ import pointOfView from 'point-of-view';
 import { renderToString } from 'react-dom/server';
 
 export default async ({
-  logger = true,
+  logger = false,
   compression = true,
   services = [],
   viewsEngine = { ejs },
   viewsPath = './dist/views',
   publicPath = './dist/public',
-}) => {
+} = {}) => {
   const app = fastify({ logger });
 
   compression && app.register(compress);
@@ -45,7 +45,7 @@ export default async ({
               const content = renderToString(<App />) || '';
               const { title = '', metas = '' } =
                 typeof route.metas === 'function'
-                  ? route.metas() : route.metas;
+                  ? route.metas() : route.metas || {};
 
               return reply.view(route.view, {
                 spruce: {
@@ -55,13 +55,16 @@ export default async ({
                 },
               });
             } catch (e) {
+              /* istanbul ignore next: not very useful */
               console.error(e);
-              return reply.code(500).send('');
+              /* istanbul ignore next: same */
+              return reply.code(500).send('Server error');
             }
           });
         }
       }
     } catch (e) {
+      /* istanbul ignore next: just in case */
       console.error(e);
     }
   }
