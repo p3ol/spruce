@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "lerna": "./node_modules/.bin/lerna",
-    "publish-local": "yarn lerna publish",
+    "prepack": "yarn lint && yarn build",
     "unlink-all": "./node_modules/.bin/lerna exec --parallel -- yarn unlink",
     "link-all": "./node_modules/.bin/lerna exec --parallel -- yarn link",
     "clean-all": "./node_modules/.bin/lerna exec --parallel -- yarn clean",
