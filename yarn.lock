@@ -2270,10 +2270,10 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@poool/eslint-config@1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@poool/eslint-config/-/eslint-config-1.0.3.tgz#c9b249b542f9927b49659c8ee9bba201e3f51658"
-  integrity sha512-guRKFNXXar/XtRRPM9ZW18mvr1qiGDa5+k/pVQt9N12+SZsf6KApNB8VXWOlCBTgzTkaPUnujtJFivHJJp8j1A==
+"@poool/eslint-config@1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@poool/eslint-config/-/eslint-config-1.2.1.tgz#dd1695032548aa1c5a9ba00e86f1707133cb1a72"
+  integrity sha512-2i1qMc0kWbFECdqEeh50sJH5siuzuQH+mr6SIosVdU/EQeog+KZEjuYPEijLCkUKUE79rof9fK/IAqySeI6l2g==
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.0"
