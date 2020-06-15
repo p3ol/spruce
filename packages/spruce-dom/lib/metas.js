@@ -73,7 +73,7 @@ const Metas = ({
     }
   };
 
-  return React.Children.map(children, (child) => {
+  return React.Children.map(children, child => {
     switch (child.type) {
       case 'title':
         return renderTitle(child);

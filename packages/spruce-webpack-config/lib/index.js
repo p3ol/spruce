@@ -7,7 +7,6 @@ const CopyPlugin = require('copy-webpack-plugin');
 const { StatsWriterPlugin } = require('webpack-stats-plugin');
 
 module.exports = ({
-  formats = ['umd', 'commonjs2'],
   entry = './src/index.js',
   outputDir = './dist',
   publicDir = './public',
@@ -56,7 +55,7 @@ module.exports = ({
       new FriendlyErrorsWebpackPlugin({ clearConsole: isDevelopment }),
       new StatsWriterPlugin({
         filename: statsOutput,
-        transform: (data, opts) => {
+        transform: data => {
           return JSON.stringify({
             bundles: data.assetsByChunkName,
           });

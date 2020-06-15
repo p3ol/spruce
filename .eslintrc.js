@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['@poool/eslint-config'],
+  extends: ['@poool/eslint-config-react'],
   overrides: [{
     files: ['tests/**/*.js'],
     parser: 'babel-eslint',
