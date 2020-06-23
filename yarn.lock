@@ -3158,7 +3158,7 @@ atomic-sleep@^1.0.0:
   resolved "https://registry.yarnpkg.com/atomic-sleep/-/atomic-sleep-1.0.0.tgz#eb85b77a601fc932cfe432c5acd364a9e2c9075b"
   integrity sha512-kNOjDqAh7px0XWNI+4QbzoiR/nTkHAWNud2uvnJquD1/x5a7EQZMJT0AczqK0Qn67oY/TTQ1LbUKajZpp3I9tQ==
 
-avvio@^6.3.1:
+avvio@^6.4.1:
   version "6.4.1"
   resolved "https://registry.yarnpkg.com/avvio/-/avvio-6.4.1.tgz#bb4127ca8b9b9c322d742a9b40962dfdca5d68b1"
   integrity sha512-jeZaUK+F7MuWSNT3VHfltskPJZKqVeTWQqBA4SDaDoLaQ0lb5TOgLeQT1BEuhTIUNISCDCGY3zjYyVmQQ48gKA==
@@ -5115,10 +5115,10 @@ eslint-visitor-keys@^1.2.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.2.0.tgz#74415ac884874495f78ec2a97349525344c981fa"
   integrity sha512-WFb4ihckKil6hu3Dp798xdzSfddwKKU3+nGniKF6HfeW6OLd2OUDEPP7TcHtB5+QXOKg2s6B2DaMPE1Nn/kxKQ==
 
-eslint@7.3.0:
-  version "7.3.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.3.0.tgz#f9f1fc3dc1227985d0db88769f2bbac7b4b875d7"
-  integrity sha512-dJMVXwfU5PT1cj2Nv2VPPrKahKTGdX+5Dh0Q3YuKt+Y2UhdL2YbzsVaBMyG9HC0tBismlv/r1+eZqs6SMIV38Q==
+eslint@7.3.1:
+  version "7.3.1"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.3.1.tgz#76392bd7e44468d046149ba128d1566c59acbe19"
+  integrity sha512-cQC/xj9bhWUcyi/RuMbRtC3I0eW8MH0jhRELSvpKYkWep3C6YZ2OkvcvJVUeO6gcunABmzptbXBuDoXsjHmfTA==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     ajv "^6.10.0"
@@ -5507,14 +5507,14 @@ fastify-static@2.7.0:
     readable-stream "^3.4.0"
     send "^0.16.0"
 
-fastify@2.14.1:
-  version "2.14.1"
-  resolved "https://registry.yarnpkg.com/fastify/-/fastify-2.14.1.tgz#2946e8e9adebcd1b4f634178c8fb7162fb816cf4"
-  integrity sha512-nSL8AgIdFCpZmFwjqB5Zzv+3/1KpwwVtB/h88Q4Og8njYbkddKGpuQlQ2tHUULXPTJrLZ7wop6olzx6HEbHdpw==
+fastify@2.15.0:
+  version "2.15.0"
+  resolved "https://registry.yarnpkg.com/fastify/-/fastify-2.15.0.tgz#0e1d793f92cdb7e23f8c370c9a1bbd755912c077"
+  integrity sha512-wbLA9Tif2A9m0tkzCUIqGyIqncM9iI8QTd++HRnmkbUk4mEs4/d8k9LaBR0ypytHvQJ1TNQbJ+m1Mt0MmfUhuA==
   dependencies:
     abstract-logging "^2.0.0"
     ajv "^6.12.0"
-    avvio "^6.3.1"
+    avvio "^6.4.1"
     fast-json-stringify "^1.18.0"
     find-my-way "^2.2.2"
     flatstr "^1.0.12"
@@ -10802,10 +10802,10 @@ terminal-link@^2.0.0:
     ansi-escapes "^4.2.1"
     supports-hyperlinks "^2.0.0"
 
-terser-webpack-plugin@3.0.4:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/terser-webpack-plugin/-/terser-webpack-plugin-3.0.4.tgz#45569bfacff6681ba733abb493e8865d4d87080f"
-  integrity sha512-hcDwaacWj4gpWAC5+Up1spE1BulQEiLV63qN8TovDmFTEjC098vDQcO4BsO/HYKevWwisnSCy/qUNK7OUXn22Q==
+terser-webpack-plugin@3.0.6:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/terser-webpack-plugin/-/terser-webpack-plugin-3.0.6.tgz#db0a108bbdd3680d72c9b491fbabad09ba207b99"
+  integrity sha512-z3HLOOPUHkCNGkeEHqqiMAIy1pjpHwS1o+i6Zn0Ws3EAvHJj46737efNNEvJ0Vx9BdDQM83d56qySDJOSORA0A==
   dependencies:
     cacache "^15.0.4"
     find-cache-dir "^3.3.1"
@@ -10814,7 +10814,7 @@ terser-webpack-plugin@3.0.4:
     schema-utils "^2.6.6"
     serialize-javascript "^4.0.0"
     source-map "^0.6.1"
-    terser "^4.6.13"
+    terser "^4.8.0"
     webpack-sources "^1.4.3"
 
 terser-webpack-plugin@^1.4.3:
@@ -10832,10 +10832,19 @@ terser-webpack-plugin@^1.4.3:
     webpack-sources "^1.4.0"
     worker-farm "^1.7.0"
 
-terser@^4.1.2, terser@^4.6.13, terser@^4.6.3, terser@^4.7.0:
+terser@^4.1.2, terser@^4.6.3, terser@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/terser/-/terser-4.7.0.tgz#15852cf1a08e3256a80428e865a2fa893ffba006"
   integrity sha512-Lfb0RiZcjRDXCC3OSHJpEkxJ9Qeqs6mp2v4jf2MHfy8vGERmVDuvjXdd/EnP5Deme5F2yBRBymKmKHCBg2echw==
+  dependencies:
+    commander "^2.20.0"
+    source-map "~0.6.1"
+    source-map-support "~0.5.12"
+
+terser@^4.8.0:
+  version "4.8.0"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-4.8.0.tgz#63056343d7c70bb29f3af665865a46fe03a0df17"
+  integrity sha512-EAPipTNeWsb/3wLPeup1tVPaXfIaU68xMnVdPafIL1TV05OhASArYyIfFvnvJCNrR2NIOvDVNNTFRa+Re2MWyw==
   dependencies:
     commander "^2.20.0"
     source-map "~0.6.1"
