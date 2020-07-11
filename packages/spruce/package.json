@@ -16,7 +16,7 @@
   "version": "0.0.1-alpha.2",
   "peerDependencies": {
     "ejs": "^3.1.2",
-    "fastify": "^2.14.1",
+    "fastify": "^2.14.1 || ^3.0.0",
     "fastify-compress": "^2.0.1",
     "fastify-static": "^2.7.0",
     "point-of-view": "^3.8.0",
@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "ejs": "3.1.3",
-    "fastify": "2.15.1",
+    "fastify": "3.0.2",
     "fastify-compress": "2.0.1",
     "fastify-static": "2.7.0",
     "point-of-view": "3.8.0",
