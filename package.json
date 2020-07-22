@@ -37,7 +37,7 @@
     "eslint-plugin-standard": "4.0.1",
     "jest": "26.1.0",
     "lerna": "3.22.1",
-    "puppeteer": "5.1.0",
+    "puppeteer": "5.2.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "rollup": "2.22.2",
