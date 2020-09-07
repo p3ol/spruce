@@ -28,7 +28,7 @@
     "raw-loader": "4.0.1",
     "terser-webpack-plugin": "4.1.0",
     "webpack": "4.44.1",
-    "webpack-node-externals": "2.5.1",
+    "webpack-node-externals": "2.5.2",
     "webpack-stats-plugin": "0.3.2"
   },
   "scripts": {
