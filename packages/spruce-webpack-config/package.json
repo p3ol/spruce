@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "babel-loader": "8.1.0",
-    "copy-webpack-plugin": "6.0.3",
+    "copy-webpack-plugin": "6.1.0",
     "file-loader": "6.1.0",
     "friendly-errors-webpack-plugin": "1.7.0",
     "html-webpack-plugin": "4.4.1",
