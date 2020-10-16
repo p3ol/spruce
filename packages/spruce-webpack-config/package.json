@@ -29,7 +29,7 @@
     "terser-webpack-plugin": "4.2.3",
     "webpack": "4.44.2",
     "webpack-node-externals": "2.5.2",
-    "webpack-stats-plugin": "0.3.2"
+    "webpack-stats-plugin": "1.0.0"
   },
   "scripts": {
     "clean": "rm -rf ./dist || true",
