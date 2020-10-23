@@ -4960,10 +4960,10 @@ eslint-plugin-react@7.21.5:
     resolve "^1.18.1"
     string.prototype.matchall "^4.0.2"
 
-eslint-plugin-standard@4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-standard/-/eslint-plugin-standard-4.0.1.tgz#ff0519f7ffaff114f76d1bd7c3996eef0f6e20b4"
-  integrity sha512-v/KBnfyaOMPmZc/dmc6ozOdWqekGp7bBGq4jLAecEfPGmfKiWS4sA8sC0LqiV9w5qmXAtXVn4M3p1jSyhY85SQ==
+eslint-plugin-standard@4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-standard/-/eslint-plugin-standard-4.0.2.tgz#021211a9f077e63a6847e7bb9ab4247327ac8e0c"
+  integrity sha512-nKptN8l7jksXkwFk++PhJB3cCDTcXOEyhISIN86Ue2feJ1LFyY3PrY3/xT2keXlJSY5bpmbiTG0f885/YKAvTA==
 
 eslint-rule-composer@0.3.0, eslint-rule-composer@^0.3.0:
   version "0.3.0"
@@ -11362,10 +11362,10 @@ webpack-sources@^1.4.0, webpack-sources@^1.4.1, webpack-sources@^1.4.3:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack-stats-plugin@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/webpack-stats-plugin/-/webpack-stats-plugin-1.0.0.tgz#724f34108900cd2c6aa0be0ef38b6b76474c443b"
-  integrity sha512-4w/63EBrFNcLn/crnGTvoRCBcEKamsJsCYI6qwM37i5uU938uc1H8fZum1Pj9pl0FBcYqa/tqCnTkon6Tlm70A==
+webpack-stats-plugin@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/webpack-stats-plugin/-/webpack-stats-plugin-1.0.1.tgz#924558eb219bb6f3a1399b52ff768e25e5cf9c54"
+  integrity sha512-PUoHMYmL7HW1uSBc5ZemIixaStU5NNseETPI0h9RWLs2glXKyH+0oyiYy8f/EVlFhklPYRVNdfVRDu8rCVFLgQ==
 
 webpack@4.44.2:
   version "4.44.2"
