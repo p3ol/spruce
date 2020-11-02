@@ -2217,20 +2217,20 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@poool/eslint-config-react@1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@poool/eslint-config-react/-/eslint-config-react-1.3.2.tgz#813336e679efbea3538aaba277b93c8d9b163aac"
-  integrity sha512-GcaYkmPGoZzUQrBsKrxHNlMHAtY4im0SxDOzvZFzBPad55hHliu4Td2/WHBr9MawWITi9cykS1VbB2ezl2mPLg==
+"@poool/eslint-config-react@1.3.6":
+  version "1.3.6"
+  resolved "https://registry.yarnpkg.com/@poool/eslint-config-react/-/eslint-config-react-1.3.6.tgz#5c0e3b4f5d96b0cb9cbd01d245c2b6fff99efe52"
+  integrity sha512-xsQE+TvsZthYWkF56UIZ2S8HaYOcvGHnC9CnZZ7oAq1p3vVEf34M+jvXaTz9+mM6oL8Vd2UmTqFC9pZAIP6FAw==
 
-"@poool/eslint-config@1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@poool/eslint-config/-/eslint-config-1.3.1.tgz#cffccdf9f0b7cee7c29115a876df83f4be83327f"
-  integrity sha512-U8Rns2XG0eIfM6WTp40l0NfbsTpbt5t5RnQ2xR3cT8JFgmk1PDXswNTwNUs85UrYfSKdspR6tTNoBkA/G5VDAw==
+"@poool/eslint-config@1.3.6":
+  version "1.3.6"
+  resolved "https://registry.yarnpkg.com/@poool/eslint-config/-/eslint-config-1.3.6.tgz#507ae1357967833a96afae4e4b7e8e3c42884797"
+  integrity sha512-x+WiWmW8G8R8XQZ4dqiG2pMhpxgyQGmmd2vhxkx9K8brovlhVEsTGtAOXg63WVwPfHvRQdPtBJit6a44SW86yw==
 
-"@poool/eslint-plugin@1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@poool/eslint-plugin/-/eslint-plugin-1.3.1.tgz#3349200173a83b73acaacee89308ee528ec68719"
-  integrity sha512-4tcsbUkY5GkvYYSNBcw4czAkgFpzeIpqHXr25EY8HEChB3JAqHROhnl4ejFU7iXfrN9o1tWAHuKS8OE3ubYQ0w==
+"@poool/eslint-plugin@1.3.3":
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/@poool/eslint-plugin/-/eslint-plugin-1.3.3.tgz#7a351ddc37738c620a236e70d63b41a6fb3dd7bf"
+  integrity sha512-tx5NjefJeB95r8HbQKiRfycDiQel1RqXAWPcs5XPdnxElqdUz+tAW0rEAviwtR0uhm5Iex8a4X0O+/5taZD/RQ==
   dependencies:
     eslint-rule-composer "0.3.0"
 
@@ -4419,7 +4419,7 @@ end-of-stream@^1.0.0, end-of-stream@^1.1.0, end-of-stream@^1.4.1:
   dependencies:
     once "^1.4.0"
 
-enhanced-resolve@^5.3.0:
+enhanced-resolve@^5.3.1:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/enhanced-resolve/-/enhanced-resolve-5.3.1.tgz#3f988d0d7775bdc2d96ede321dc81f8249492f57"
   integrity sha512-G1XD3MRGrGfNcf6Hg0LVZG7GIKcYkbfHa5QMxt1HDUTdYoXH0JR1xXyg+MaKLF73E9A27uWNVxvFivNRYeUB6w==
@@ -10185,7 +10185,7 @@ terminal-link@^2.0.0:
     ansi-escapes "^4.2.1"
     supports-hyperlinks "^2.0.0"
 
-terser-webpack-plugin@5.0.3, terser-webpack-plugin@^5.0.0:
+terser-webpack-plugin@5.0.3, terser-webpack-plugin@^5.0.3:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/terser-webpack-plugin/-/terser-webpack-plugin-5.0.3.tgz#ec60542db2421f45735c719d2e17dabfbb2e3e42"
   integrity sha512-zFdGk8Lh9ZJGPxxPE6jwysOlATWB8GMW8HcfGULWA/nPal+3VdATflQvSBSLQJRCmYZnfFJl6vkRTiwJGNgPiQ==
@@ -10746,10 +10746,10 @@ webpack-sources@^1.4.3:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack-sources@^2.0.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-2.1.1.tgz#6922dc1bf7f7f95aab56675535b6e20f87b9147f"
-  integrity sha512-hraq9n99K564zuZUsE61iATO3jvzxOmGo20UlOe3zgdHOBp8inTJgv7EY4RgvCv7Ywx0/vpQTyYSjnFpv4gNtQ==
+webpack-sources@^2.1.1:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-2.2.0.tgz#058926f39e3d443193b6c31547229806ffd02bac"
+  integrity sha512-bQsA24JLwcnWGArOKUxYKhX3Mz/nK1Xf6hxullKERyktjNMC4x8koOeaDNTA2fEJ09BdWLbM/iTW0ithREUP0w==
   dependencies:
     source-list-map "^2.0.1"
     source-map "^0.6.1"
@@ -10759,10 +10759,10 @@ webpack-stats-plugin@1.0.2:
   resolved "https://registry.yarnpkg.com/webpack-stats-plugin/-/webpack-stats-plugin-1.0.2.tgz#bddca3c64bb1e1bd9de96dcb8e21739423fe2180"
   integrity sha512-7G8gSRMtXhld6VBJ3OXoBxPeopyLM4T/QpUUudEuH9N+hhb1AGHmARYQsPMgeJBPsrBGUuQWKRh1FECfUhYkQw==
 
-webpack@5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.2.0.tgz#02f22466b79751a80a50f20f027a716e296b3ef5"
-  integrity sha512-evtOjOJQq3zaHJIWsJjM4TGtNHtSrNVAIyQ+tdPW/fRd+4PLGbUG6S3xt+N4+QwDBOaCVd0xCWiHd4R6lWO5DQ==
+webpack@5.3.2:
+  version "5.3.2"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.3.2.tgz#f88f6f2c54eaa1f68c8f37d8984657eaf68b00f0"
+  integrity sha512-DXsfHoI6lQAR3KnQh7+FsRfs9fs+TEvzXCA35UbKv4kVuzslg7QCMAcpFRZNDMjdtm9N/PoO54XEzGN9TeacQg==
   dependencies:
     "@types/eslint-scope" "^3.7.0"
     "@types/estree" "^0.0.45"
@@ -10773,7 +10773,7 @@ webpack@5.2.0:
     acorn "^8.0.4"
     browserslist "^4.14.5"
     chrome-trace-event "^1.0.2"
-    enhanced-resolve "^5.3.0"
+    enhanced-resolve "^5.3.1"
     eslint-scope "^5.1.1"
     events "^3.2.0"
     glob-to-regexp "^0.4.1"
@@ -10785,9 +10785,9 @@ webpack@5.2.0:
     pkg-dir "^4.2.0"
     schema-utils "^3.0.0"
     tapable "^2.0.0"
-    terser-webpack-plugin "^5.0.0"
+    terser-webpack-plugin "^5.0.3"
     watchpack "^2.0.0"
-    webpack-sources "^2.0.1"
+    webpack-sources "^2.1.1"
 
 whatwg-encoding@^1.0.5:
   version "1.0.5"
