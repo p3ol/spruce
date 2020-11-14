@@ -41,7 +41,7 @@
     "puppeteer": "5.4.1",
     "react": "16.14.0",
     "react-dom": "16.14.0",
-    "rollup": "2.33.1",
+    "rollup": "2.33.2",
     "rollup-plugin-babel": "4.4.0",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-eslint": "7.0.0",
